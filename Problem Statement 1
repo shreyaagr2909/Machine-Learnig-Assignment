@@ -1,0 +1,20 @@
+import numpy as np
+import random
+
+np.random.seed(123)
+
+def steps(n) :
+  sum = 0
+  for i in range(n):
+      randwalk = [0]
+      for x in range(100):
+          step = randwalk[-1]
+          dice = random.randint(1,7)
+          if dice <= 2 :
+              step = max(0, step - 1)
+          elif dice<=5:
+              step += 1
+          else:
+              step = step + random.randint(1,7)
+      sum = sum + step
+      print(dice , step , sum) 
