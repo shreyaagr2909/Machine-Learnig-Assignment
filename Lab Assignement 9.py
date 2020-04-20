@@ -13,6 +13,10 @@ from keras.layers import MaxPooling2D
 from keras.layers import Dense
 from keras.layers import Flatten
 from keras.optimizers import SGD
+from keras.preprocessing.image import load_img
+from keras.preprocessing.image import img_to_array
+from keras.models import load_model
+
 
 # load dataset
 (trainX, trainy), (testX, testy) = mnist.load_data()
@@ -125,10 +129,6 @@ def run_test_harness():
 run_test_harness()
 
 # make a prediction for a new image.
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from keras.models import load_model
-
 # load and prepare the image
 def load_image(filename):
 	# load the image
